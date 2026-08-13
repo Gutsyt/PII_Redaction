@@ -1,0 +1,35 @@
+[2026-08-10 09:15:22] TICKET #10492 - Customer Query
+User: Rashi Patil
+Email: rashhi.patil@gmail.com
+Phone: +91 9876543210
+Address: 45 Park Avenue, Block C, Bandra West, Mumbai 400050, India
+DOB: 14/08/1992
+SSN / Govt ID: 324-55-9102
+Credit Card: 4532-8910-4421-9018
+IP: 192.168.1.104
+Company: Acme Solutions Pvt Ltd
+Issue: Billing discrepancy on invoice #INV-9921. Replaced contact info requested: John Doe (john.doe@example.com, +91 1234567645).
+
+[2026-08-10 10:42:11] TICKET #10493 - Technical Support
+User: Rohan Dey
+Email: rohan.dey@gmail.com
+Phone: +91 9988776655
+Address: Flat 302, Green Valley Apartments, Off MG Road, Bengaluru 560001, India
+DOB: 23/11/1988
+SSN / Govt ID: 419-88-2301
+Credit Card: 5412-7511-9023-4156
+IP: 10.0.4.52
+Company: TechCorp Innovations LLC
+Issue: Unable to reset password. Alternate contact: Peter Parker (peter.parker@example.com).
+
+[2026-08-10 11:30:05] TICKET #10494 - Account Escalation
+User: Sarthak Malvadkar
+Email: cs.connect@kshinternational.com
+Phone: +91 20 45053237
+Address: 201, Tower 2, Montreal Business Centre, Off Pallod Farms, Baner, Pune 411045, Maharashtra, India
+DOB: 12/05/1985
+Govt ID (PAN): NBWPS1951N
+DIN: 00135070
+IP: 172.16.254.1
+Company: KSH INTERNATIONAL LIMITED
+Issue: Corporate filing update for promoter Kushal Subbayya Hegde (kushal.hegde@kshinternational.com).

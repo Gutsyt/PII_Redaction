@@ -1,0 +1,35 @@
+[26/04/1967 09:15:22] TICKET #10492 - Customer Query
+User: Charles Garcia
+Email: azadbalan@example.com
+Phone: +91 9746317213
+Address: 124 Kaul Ganj, Bongaigaon, Iowa - 77737, India
+DOB: 21/01/1966
+SSN / Govt ID: AHFTR8040G
+Credit Card: 4532-4811-9279-1434
+IP: 198.51.100.144
+Company: Acme Solutions Pvt Ltd
+Issue: Billing discrepancy on invoice #INV-9921. Replaced contact Gayathri Chaudry: John Doe (harinimall@example.com, +91 7854001193).
+
+[26/04/1967 10:42:11] TICKET #10493 - Technical Support
+User: Gunbir Parmer
+Email: reneeblair@example.com
+Phone: +91 9791232393
+Address: Flat 728 Brar Marg, Barbaraland, Sikkim - 131647, India
+DOB: 06/09/1976
+SSN / Govt ID: OFPVA8631Y
+Credit Card: 4532-6514-2674-2519
+IP: 198.51.100.98
+Company: TechCorp Innovations LLC
+Issue: Unable to reset password. Alternate contact: Yash Gade (michaelmiles@example.com).
+
+[26/04/1967 11:30:05] TICKET #10494 - Account Escalation
+User: William Bowman
+Email: dakshkarnik@example.com
+Phone: +91 7415393687
+Address: 377 Rattan Path, East Robinshire, Indiana - 52357, India
+DOB: 04/05/1975
+Govt ID (PAN): WPUSN9358T
+DIN: XJEBR7988M
+IP: 198.51.100.72
+Company: Wright PLC Ltd.
+Issue: Corporate filing update for promoter Zachary Hicks (jessicasilva@example.com).
