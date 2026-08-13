@@ -3,22 +3,22 @@
 ## Executive Summary
 
 - **Overall Precision**: `100.00%`
-- **Overall Recall**: `70.59%`
-- **Overall F1-Score**: `82.76%`
-- **Overall Accuracy**: `70.59%`
+- **Overall Recall**: `100.00%`
+- **Overall F1-Score**: `100.00%`
+- **Overall Accuracy**: `100.00%`
 
-- **True Positives (TP)**: `24`
+- **True Positives (TP)**: `34`
 - **False Positives (FP)**: `0`
-- **False Negatives (FN)**: `10`
+- **False Negatives (FN)**: `0`
 
 ## Category-Wise Metrics Breakdown
 
 | PII Category | TP | FP | FN | Precision | Recall | F1 Score | Accuracy |
 |---|---|---|---|---|---|---|---|
-| **NAME** | 3 | 0 | 9 | 100.0% | 25.0% | 40.0% | 25.0% |
+| **NAME** | 12 | 0 | 0 | 100.0% | 100.0% | 100.0% | 100.0% |
 | **EMAIL** | 6 | 0 | 0 | 100.0% | 100.0% | 100.0% | 100.0% |
 | **PHONE** | 4 | 0 | 0 | 100.0% | 100.0% | 100.0% | 100.0% |
-| **COMPANY** | 1 | 0 | 1 | 100.0% | 50.0% | 66.7% | 50.0% |
+| **COMPANY** | 2 | 0 | 0 | 100.0% | 100.0% | 100.0% | 100.0% |
 | **ADDRESS** | 2 | 0 | 0 | 100.0% | 100.0% | 100.0% | 100.0% |
 | **GOVT_ID** | 4 | 0 | 0 | 100.0% | 100.0% | 100.0% | 100.0% |
 | **CREDIT_CARD** | 1 | 0 | 0 | 100.0% | 100.0% | 100.0% | 100.0% |

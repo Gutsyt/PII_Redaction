@@ -1,3 +1,4 @@
+import os
 import re
 import spacy
 from typing import List, Dict, Any, Tuple
@@ -39,10 +40,22 @@ class PIIEntity:
 
 class PIIDetector:
     def __init__(self):
+        self.nlp = None
         try:
             self.nlp = spacy.load("en_core_web_sm")
         except Exception:
-            self.nlp = None
+            # Fallback path lookup for Windows environments
+            possible_paths = [
+                r"C:\Users\LENOVO\AppData\Local\Programs\Python\Python312\Lib\site-packages\en_core_web_sm",
+                r"C:\Users\LENOVO\miniconda3\envs\scaler\Lib\site-packages\en_core_web_sm"
+            ]
+            for p in possible_paths:
+                if os.path.exists(p):
+                    try:
+                        self.nlp = spacy.load(p)
+                        break
+                    except Exception:
+                        pass
 
         # Exclude non-PII terms & common field header labels to prevent false positives
         self.false_positive_terms = {
