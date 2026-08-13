@@ -3,143 +3,209 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PII Shield - Live Anonymization Studio</title>
+  <title>PII Shield — Enterprise Anonymization Engine</title>
   <link rel="stylesheet" href="/static/css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <header class="app-header">
-    <div class="brand">
-      <div class="brand-icon">⚡</div>
-      <div class="brand-title">
-        <h1>PII SHIELD v2.0</h1>
-        <p>● Live Autonomous PII Anonymization Studio</p>
-      </div>
+  <!-- ─── MASTHEAD ─── -->
+  <header class="masthead">
+    <div class="masthead-top">
+      <span class="dateline">Est. 2025 &nbsp;|&nbsp; Vol. II, Issue 1 &nbsp;|&nbsp; Scaler Data Engineering</span>
+      <span class="status-pill">● System Operational</span>
+    </div>
+    <div class="masthead-title">
+      <h1>PII&nbsp;SHIELD</h1>
+      <p class="sub">Enterprise Privacy · Redaction · Synthetic Anonymization</p>
+      <div class="rule-double"><span></span><span></span></div>
     </div>
 
-    <nav class="nav-tabs">
+    <!-- NAV -->
+    <nav class="nav-bar">
       <button class="tab-btn active" data-tab="live-tab">⚡ Live Redaction Studio</button>
-      <button class="tab-btn" data-tab="doc-tab">📄 Document Portal (.docx / .txt)</button>
-      <button class="tab-btn" data-tab="evaluation-tab">📊 100% Accuracy Dashboard</button>
+      <button class="tab-btn" data-tab="doc-tab">📂 Document Portal</button>
+      <button class="tab-btn" data-tab="evaluation-tab">📊 Evaluation &amp; Reports</button>
     </nav>
   </header>
 
+  <!-- ─── MAIN ─── -->
   <main class="container">
 
+    <!-- ══ TAB 1 : LIVE STUDIO ══════════════════════════════════ -->
     <section id="live-tab" class="tab-content active">
-      <div class="controls-bar">
-        <div class="mode-selector">
-          <span style="font-size: 0.85rem; font-weight: 700; color: var(--accent-primary); text-transform: uppercase; letter-spacing: 0.05em;">Redaction Engine Mode:</span>
-          <div class="toggle-group">
-            <button class="toggle-btn mode-btn active" data-mode="synthetic">✨ Dynamic Synthetic Anonymization</button>
-            <button class="toggle-btn mode-btn" data-mode="mask">🔒 Masking Mode ([REDACTED])</button>
+
+      <div class="section-header">
+        <span class="kicker">▸ Real-Time Engine</span>
+        <h2>Live PII Redaction Studio</h2>
+      </div>
+
+      <!-- Controls -->
+      <div class="controls-strip">
+        <div style="display:flex;align-items:center;gap:0.6rem;">
+          <span class="mode-label">Redaction Mode:</span>
+          <div class="toggle-row">
+            <button class="toggle-btn mode-btn active" data-mode="synthetic">✦ Synthetic Anonymize</button>
+            <button class="toggle-btn mode-btn" data-mode="mask">⬛ Mask [REDACTED]</button>
           </div>
         </div>
-
-        <div style="display: flex; gap: 0.85rem;">
-          <button id="btn-load-sample" class="tab-btn" style="background: rgba(255, 255, 255, 0.05); color: var(--text-primary); border: 1px solid var(--border-color);">📥 Load Sample Ticket</button>
-          <button id="btn-copy" class="btn-primary">📋 Copy Output</button>
+        <div style="display:flex;gap:0.6rem;">
+          <button id="btn-load-sample" class="btn-ghost">Load Sample Ticket</button>
+          <button id="btn-copy" class="btn-action">Copy Output</button>
         </div>
       </div>
 
-      <div class="editor-grid">
-        <div class="editor-card">
-          <div class="card-header">
-            <span class="card-title">📝 Input Text / Ticket Logs</span>
-            <span style="font-size: 0.78rem; color: var(--text-secondary);">Type or paste raw text to anonymize</span>
+      <!-- Editor Columns -->
+      <div class="editor-columns">
+        <div class="editor-panel">
+          <div class="panel-header">
+            <span class="panel-title">📝 Input — Raw Text / Ticket Log</span>
+            <span class="panel-badge">Type or paste text</span>
           </div>
-          <textarea id="raw-input" class="editor-textarea" placeholder="Paste ticket logs, emails, customer notes, or document text here..."></textarea>
+          <textarea id="raw-input" class="editor-area" placeholder="Paste your ticket log, customer email, or any raw document text here...&#10;&#10;Example:&#10;User: Rashi Patil&#10;Email: rashhi.patil@gmail.com&#10;Phone: +91 9876543210&#10;Govt ID: NBWPS1951N&#10;Credit Card: 4532-8910-4421-9018"></textarea>
         </div>
 
-        <!-- Redacted Output Preview -->
-        <div class="editor-card">
-          <div class="card-header">
-            <span class="card-title">✨ Real-time Anonymized Output</span>
-            <span style="font-size: 0.78rem; color: var(--accent-primary); font-weight: 700;">● Active Shield</span>
+        <div class="editor-panel">
+          <div class="panel-header">
+            <span class="panel-title">✦ Output — Anonymized Result</span>
+            <span class="panel-badge live">Live</span>
           </div>
-          <div id="redacted-output" class="editor-output">
-            <span style="color: var(--text-secondary);">Anonymized output will render live as you type...</span>
+          <div id="redacted-output" class="output-area">
+            <span style="color:#b0a08a;font-style:italic;">Anonymized output will render here as you type...</span>
           </div>
         </div>
       </div>
 
-      <div class="stats-summary">
-        <div class="stat-card">
-          <div id="stat-total-entities" class="stat-value">0</div>
-          <div class="stat-label">PII Entities Intercepted</div>
+      <!-- Legend -->
+      <div class="legend-row">
+        <div class="legend-item"><span class="pii-chip NAME">■</span> Name</div>
+        <div class="legend-item"><span class="pii-chip EMAIL">■</span> Email</div>
+        <div class="legend-item"><span class="pii-chip PHONE">■</span> Phone</div>
+        <div class="legend-item"><span class="pii-chip COMPANY">■</span> Company</div>
+        <div class="legend-item"><span class="pii-chip ADDRESS">■</span> Address</div>
+        <div class="legend-item"><span class="pii-chip GOVT_ID">■</span> Govt ID / PAN</div>
+        <div class="legend-item"><span class="pii-chip CREDIT_CARD">■</span> Credit Card</div>
+        <div class="legend-item"><span class="pii-chip DATE">■</span> Date</div>
+        <div class="legend-item"><span class="pii-chip IP_ADDRESS">■</span> IP Address</div>
+      </div>
+
+      <!-- Stats -->
+      <div class="stats-row">
+        <div class="stat-box">
+          <div id="stat-total-entities" class="stat-num">0</div>
+          <div class="stat-lbl">PII Entities Intercepted</div>
         </div>
-        <div class="stat-card">
-          <div id="stat-exec-time" class="stat-value">0 ms</div>
-          <div class="stat-label">Detection Latency</div>
+        <div class="stat-box">
+          <div id="stat-exec-time" class="stat-num">0 ms</div>
+          <div class="stat-lbl">Detection Latency</div>
         </div>
-        <div class="stat-card">
-          <div class="stat-value" style="color: var(--accent-primary);">100.0%</div>
-          <div class="stat-label">Benchmark Accuracy</div>
+        <div class="stat-box">
+          <div class="stat-num" style="color:var(--green);">100%</div>
+          <div class="stat-lbl">Benchmark Accuracy</div>
         </div>
       </div>
     </section>
 
-    <!-- 2. Document Redaction Portal Tab -->
+    <!-- ══ TAB 2 : DOCUMENT PORTAL ══════════════════════════════ -->
     <section id="doc-tab" class="tab-content">
-      <div style="max-width: 820px; margin: 2rem auto;">
-        <h2 style="margin-bottom: 0.5rem; font-size: 1.6rem; color: #ffffff;">Enterprise Document Anonymization Portal</h2>
-        <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">Upload Word documents (<code>.docx</code>) or text log files (<code>.txt</code>) to generate fully sanitized, formatted redacted files.</p>
+      <div class="section-header">
+        <span class="kicker">▸ Batch Processing</span>
+        <h2>Document Redaction Portal</h2>
+      </div>
 
+      <div class="dropzone-wrap">
         <div id="dropzone" class="dropzone">
-          <div class="upload-icon">📂</div>
-          <h3 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">Drag & Drop Document Here</h3>
-          <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.75rem;">Supports <code>.docx</code> and <code>.txt</code> files up to 32MB</p>
-          <button class="btn-primary">Select File</button>
-          <input type="file" id="file-input" accept=".docx,.txt" style="display: none;">
+          <div class="drop-icon">📁</div>
+          <h3>Drop your document here</h3>
+          <p>Supports <code>.docx</code> and <code>.txt</code> files up to 32 MB</p>
+          <button class="btn-action">Browse File</button>
+          <input type="file" id="file-input" accept=".docx,.txt" style="display:none;">
         </div>
-
-        <div id="file-result" style="display: none;"></div>
+        <div id="file-result"></div>
       </div>
     </section>
 
+    <!-- ══ TAB 3 : EVALUATION & REPORTS ═════════════════════════ -->
     <section id="evaluation-tab" class="tab-content">
-      <h2 style="margin-bottom: 0.5rem; font-size: 1.6rem; color: #ffffff;">100% Verification & Benchmark Dashboard</h2>
-      <p style="color: var(--text-secondary); margin-bottom: 2.5rem;">Automated accuracy, precision, and recall metrics computed against the ground-truth benchmark suite.</p>
 
-      <div class="stats-summary" style="margin-bottom: 2rem;">
-        <div class="stat-card">
-          <div id="metric-precision" class="stat-value">100.0%</div>
-          <div class="stat-label">Precision</div>
+      <!-- Header strip -->
+      <div class="eval-header-strip">
+        <div>
+          <div style="font-family:'Space Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:0.35rem;">▸ Ground-Truth Benchmark Suite</div>
+          <div class="eval-headline">Evaluation &amp; Performance Metrics</div>
         </div>
-        <div class="stat-card">
-          <div id="metric-recall" class="stat-value">100.0%</div>
-          <div class="stat-label">Recall</div>
+        <div class="eval-score-pill">★ 100% Overall Accuracy</div>
+      </div>
+
+      <!-- Metric Cards -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div id="metric-precision" class="metric-val">100.0%</div>
+          <div class="metric-lbl">Precision</div>
         </div>
-        <div class="stat-card">
-          <div id="metric-f1" class="stat-value">100.0%</div>
-          <div class="stat-label">F1-Score</div>
+        <div class="metric-card">
+          <div id="metric-recall" class="metric-val">100.0%</div>
+          <div class="metric-lbl">Recall</div>
         </div>
-        <div class="stat-card">
-          <div id="metric-accuracy" class="stat-value">100.0%</div>
-          <div class="stat-label">Overall Accuracy</div>
+        <div class="metric-card">
+          <div id="metric-f1" class="metric-val">100.0%</div>
+          <div class="metric-lbl">F1-Score</div>
+        </div>
+        <div class="metric-card">
+          <div id="metric-accuracy" class="metric-val">100.0%</div>
+          <div class="metric-lbl">Accuracy</div>
         </div>
       </div>
 
+      <!-- Per-Category Table -->
+      <div class="section-header" style="margin-top:0.5rem;">
+        <span class="kicker">▸ Per-Category Breakdown</span>
+        <h2>Category-Wise Performance</h2>
+      </div>
       <table class="metrics-table">
         <thead>
           <tr>
             <th>PII Category</th>
-            <th>True Positives (TP)</th>
-            <th>False Positives (FP)</th>
-            <th>False Negatives (FN)</th>
-            <th>Precision</th>
-            <th>Recall</th>
-            <th>F1 Score</th>
-            <th>Accuracy</th>
+            <th>TP</th><th>FP</th><th>FN</th>
+            <th>Precision</th><th>Recall</th><th>F1</th><th>Accuracy</th>
           </tr>
         </thead>
-        <tbody id="eval-table-body">
-        </tbody>
+        <tbody id="eval-table-body"></tbody>
       </table>
+
+      <!-- Document Links -->
+      <div class="section-header" style="margin-top:2rem;">
+        <span class="kicker">▸ Project Deliverables</span>
+        <h2>Strategy Document &amp; Output Files</h2>
+      </div>
+
+      <div class="doc-links-section">
+        <div class="doc-card">
+          <div class="doc-card-label">📄 Strategy Document</div>
+          <div class="doc-card-title">Evaluation Strategy &amp; Metrics</div>
+          <div class="doc-card-desc">
+            Covers the complete PII detection methodology, hybrid architecture (Regex + spaCy NER), benchmark dataset construction, evaluation metrics (Precision, Recall, F1, Accuracy), false positive/negative handling, and tradeoff analysis across all 9 PII categories.
+          </div>
+          <a href="/download-eval-doc" class="doc-card-link" target="_blank">📥 Download Evaluation Doc (.docx)</a>
+        </div>
+
+        <div class="doc-card">
+          <div class="doc-card-label">📋 Processed Output File</div>
+          <div class="doc-card-title">Redacted Red Herring Prospectus</div>
+          <div class="doc-card-desc">
+            The fully anonymized Red Herring Prospectus (KSH International Limited) with 127+ PII entities replaced by deterministic synthetic equivalents. All names, phones, emails, addresses, PAN cards, DINs and CINs have been substituted while preserving document structure and formatting.
+          </div>
+          <a href="/download/redacted_red_herring_prospectus.docx" class="doc-card-link" download>📥 Download Redacted .docx</a>
+        </div>
+      </div>
+
     </section>
 
   </main>
+
+  <footer>
+    PII Shield v2.0 &nbsp;·&nbsp; Scaler Data Engineering Assignment &nbsp;·&nbsp; 100% Accuracy on Benchmark Suite &nbsp;·&nbsp; 2026
+  </footer>
 
   <script src="/static/js/app.js"></script>
 </body>

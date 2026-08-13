@@ -126,7 +126,7 @@ Company: Acme Solutions Pvt Ltd. Alternate: John Doe (john.doe@example.com, +91 
     fileResult.innerHTML = '<p>Processing document redaction...</p>';
 
     try {
-      const response = await axios('/api/redact-file', {
+      const response = await fetch('/api/redact-file', {
         method: 'POST',
         body: formData
       });

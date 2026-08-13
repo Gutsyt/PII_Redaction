@@ -5,6 +5,8 @@ from werkzeug.utils import secure_filename
 from src.detector import PIIDetector
 from src.redactor import PIIRedactor
 from src.docx_handler import DocxRedactor
+
+EVAL_DOC = 'PII_Redaction_Evaluation_Strategy_and_Metrics.docx'
 from src.evaluator import PIIEvaluator
 from tests.benchmark_data import get_benchmark_dataset
 
@@ -33,7 +35,7 @@ def redact_text_endpoint():
         })
 
     start_time = time.time()
-    redactor = PIIRedactor(mode=mode)
+    redactor = PIIRedactor(mode=mode, seed=None)
     entities = detector.detect(text)
     redacted_text, changes = redactor.redact_text(text, entities)
     exec_ms = round((time.time() - start_time) * 1000, 2)
@@ -113,6 +115,10 @@ def get_evaluation_metrics():
     dataset = get_benchmark_dataset()
     results = evaluator.evaluate_benchmark(dataset)
     return jsonify(results)
+
+@app.route('/download-eval-doc')
+def download_eval_doc():
+    return send_from_directory(app.config['UPLOAD_FOLDER'], EVAL_DOC, as_attachment=True)
 
 @app.route('/download/<filename>')
 def download_file(filename):
